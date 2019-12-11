@@ -4,7 +4,8 @@
   "description": "Functions to help react components to respond to RxJS based observables",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest --verbose ./src",
+    "build": "tsc"
   },
   "keywords": [
     "rxjs",
@@ -13,5 +14,23 @@
     "react-lifecycle"
   ],
   "author": "Bryan Neva <bryan.neva@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.3",
+    "@types/jest": "^24.0.23",
+    "@types/react": "^16.9.16",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "typescript": "^3.7.3"
+  },
+  "dependencies": {
+    "@types/react-dom": "^16.9.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rxjs": "^6.5.3"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
