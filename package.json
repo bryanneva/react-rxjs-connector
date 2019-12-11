@@ -1,0 +1,17 @@
+{
+  "name": "react-rxjs-connector",
+  "version": "0.1.0",
+  "description": "Functions to help react components to respond to RxJS based observables",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "rxjs",
+    "react",
+    "hooks",
+    "react-lifecycle"
+  ],
+  "author": "Bryan Neva <bryan.neva@gmail.com>",
+  "license": "ISC"
+}
