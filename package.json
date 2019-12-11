@@ -2,7 +2,8 @@
   "name": "react-rxjs-connector",
   "version": "0.1.0",
   "description": "Functions to help react components to respond to RxJS based observables",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "jest --verbose ./src",
     "build": "tsc"
@@ -32,5 +33,7 @@
   },
   "files": [
     "lib/**/*"
-  ]
+  ],
+  "prepare": "npm run build",
+  "postversion": "git push && git push --tags"
 }
