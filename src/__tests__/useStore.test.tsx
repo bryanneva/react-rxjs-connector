@@ -1,7 +1,8 @@
 import {BehaviorSubject} from "rxjs";
-import {render, cleanup} from "@testing-library/react";
+import {cleanup, render} from "@testing-library/react";
 import * as React from "react";
 import {useStore} from "../useStore";
+import {act} from "react-dom/test-utils";
 
 describe('useStore', () => {
   afterEach(cleanup);
@@ -9,10 +10,12 @@ describe('useStore', () => {
   it('rerenders component when store changes', () => {
     const behaviorSubject = new BehaviorSubject(['']);
     const renderSpy = jest.fn();
-    render(<TestComponent behaviorSubject={behaviorSubject} renderSpy={renderSpy}/>);
+    act(() => {
+      render(<TestComponent behaviorSubject={behaviorSubject} renderSpy={renderSpy}/>);
+      behaviorSubject.next(['', '']);
+    });
 
-    behaviorSubject.next(['', '']);
-    expect(renderSpy).toHaveBeenCalledTimes(3);
+    expect(renderSpy).toHaveBeenCalledTimes(2);
   });
 
   it('returns values', () => {
